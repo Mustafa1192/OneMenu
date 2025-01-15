@@ -1,0 +1,69 @@
+[
+    {
+      "name": "Samosa",
+      "description": "A crispy and spicy Indian snack filled with potatoes and peas.",
+      "img": "https://i.pinimg.com/736x/90/86/3d/90863d660cbf7bc0f15e2fddedd59b8f.jpg",
+      "price": 15
+    },
+    {
+        "name": "Define Big Data and Explain 3V of Big Data.",
+        "description": "Big Data is a term used to describe data that has massive volume, comes in a variety of structure and is generated at high velocity.This kind of data possesses challenges to the traditional RDBMS used for storing and processing data.Big Data is paring way for new approaches of processing and storing data.",
+        "img": "https://i.imgur.com/pdDPFvE.png",
+        "price": 19
+      },
+    {
+      "name": "Vada",
+      "description": "A savory fried donut made from lentil flour, popular in South India.",
+      "img": "https://example.com/images/vada.jpg",
+      "price": 20
+    },
+    {
+      "name": "Cutlet",
+      "description": "A deep-fried snack made with mixed vegetables, potatoes, and spices.",
+      "img": "https://example.com/images/cutlet.jpg",
+      "price": 25
+    },
+    {
+      "name": "Fried Rice",
+      "description": "A flavorful rice dish stir-fried with vegetables and soy sauce.",
+      "img": "https://example.com/images/fried_rice.jpg",
+      "price": 80
+    },
+    {
+      "name": "Chole Bhature",
+      "description": "A delicious Punjabi dish made of spicy chickpeas served with fried bread.",
+      "img": "https://example.com/images/chole_bhature.jpg",
+      "price": 100
+    },
+    {
+      "name": "Masala Dosa",
+      "description": "A South Indian crepe filled with spiced mashed potatoes, served with chutney and sambhar.",
+      "img": "https://example.com/images/masala_dosa.jpg",
+      "price": 70
+    },
+    {
+      "name": "Paneer Butter Masala",
+      "description": "A rich and creamy tomato-based curry with paneer cubes.",
+      "img": "https://example.com/images/paneer_butter_masala.jpg",
+      "price": 150
+    },
+    {
+      "name": "Lassi",
+      "description": "A traditional Indian yogurt-based drink, sweet and refreshing.",
+      "img": "https://example.com/images/lassi.jpg",
+      "price": 40
+    },
+    {
+      "name": "Masala Chai",
+      "description": "A spiced Indian tea brewed with milk, ginger, and cardamom.",
+      "img": "https://example.com/images/masala_chai.jpg",
+      "price": 20
+    },
+    {
+      "name": "Cold Coffee",
+      "description": "A chilled and refreshing coffee drink, topped with frothy cream.",
+      "img": "https://example.com/images/cold_coffee.jpg",
+      "price": 60
+    }
+  ]
+  
