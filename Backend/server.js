@@ -253,34 +253,34 @@ app.post('/resend-otp', async (req, res) => {
 });
 
 // // Route: Fetch Products from Multiple Collections
-// app.get('/api/products/:menuType', async (req, res) => {
-//     const { menuType } = req.params;
+app.get('/api/products/:menuType', async (req, res) => {
+    const { menuType } = req.params;
   
-//     try {
-//         // Dynamically select the collection model based on the menuType
-//         let collection;
-//         if (menuType === 'fooditems') {
-//           collection = Fooditems;
-//         } else if (menuType === 'frankies_Rolls') {
-//           collection = FrankiesRolls;
-//         } else if (menuType === 'FreshJuice') {
-//           collection = FreshJuice;
-//         } else if (menuType === 'AnnaDishes') {
-//           collection = AnnaDishes;
-//         } else {
-//           return res.status(400).json({ message: 'Invalid menu type.' });
-//         }
+    try {
+        // Dynamically select the collection model based on the menuType
+        let collection;
+        if (menuType === 'fooditems') {
+          collection = Fooditems;
+        } else if (menuType === 'frankies_Rolls') {
+          collection = FrankiesRolls;
+        } else if (menuType === 'FreshJuice') {
+          collection = FreshJuice;
+        } else if (menuType === 'AnnaDishes') {
+          collection = AnnaDishes;
+        } else {
+          return res.status(400).json({ message: 'Invalid menu type.' });
+        }
 
-//       const products = await collection.find();
-//       res.status(200).json(products);
-//     } catch (error) {
-//       console.error('Error fetching products:', error);
-//       res.status(500).json({ message: 'Server error.' });
-//     }
-//   });
+      const products = await collection.find();
+      res.status(200).json(products);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+      res.status(500).json({ message: 'Server error.' });
+    }
+  });
 
 // Route: Get all menus
-app.get('/api/products/menus', async (req, res) => {
+app.get('/products/menuss', async (req, res) => {
     try {
       const foodItems = await Fooditems.find();
       const frankiesRolls = await FrankiesRolls.find();
@@ -301,41 +301,66 @@ app.get('/api/products/menus', async (req, res) => {
     }
   });
   
-  const selectedItemSchema = new mongoose.Schema({
-    id: String,
-    title: String,
-    price: Number,
-    rating: Number,
-    image: String,
-  });
+//   const selectedItemSchema = new mongoose.Schema({
+//     id: String,
+//     title: String,
+//     price: Number,
+//     rating: Number,
+//     image: String,
+//   });
   
-  const SelectedItem = mongoose.model("SelectedItem", selectedItemSchema);
+//   const SelectedItem = mongoose.model("SelectedItem", selectedItemSchema);
   
-  // Save selected items
-  app.post("/api/products/selected-items", async (req, res) => {
-    try {
-      const { selectedItems } = req.body;
+//   // Save selected items
+//   app.post("/api/products/selected-items", async (req, res) => {
+//     try {
+//       const { selectedItems } = req.body;
   
-      await SelectedItem.deleteMany({}); // Clear previous selections if needed
-      await SelectedItem.insertMany(selectedItems); // Add new selections
+//       await SelectedItem.deleteMany({}); // Clear previous selections if needed
+//       await SelectedItem.insertMany(selectedItems); // Add new selections
   
-      res.status(200).json({ message: "Selected items saved successfully" });
-    } catch (error) {
-      console.error("Error saving selected items:", error);
-      res.status(500).json({ error: "Failed to save selected items" });
-    }
-  });
+//       res.status(200).json({ message: "Selected items saved successfully" });
+//     } catch (error) {
+//       console.error("Error saving selected items:", error);
+//       res.status(500).json({ error: "Failed to save selected items" });
+//     }
+//   });
 
-  // Fetch selected items
-app.get("/api/products/selected-menus", async (req, res) => {
-    try {
-      const selectedItems = await SelectedItem.find();
-      res.status(200).json(selectedItems);
-    } catch (error) {
-      console.error("Error fetching selected items:", error);
-      res.status(500).json({ error: "Failed to fetch selected items" });
-    }
-  });
+//   // Fetch selected items
+// app.get("/api/products/selected-menus", async (req, res) => {
+//     try {
+//       const selectedItems = await SelectedItem.find();
+//       res.status(200).json(selectedItems);
+//     } catch (error) {
+//       console.error("Error fetching selected items:", error);
+//       res.status(500).json({ error: "Failed to fetch selected items" });
+//     }
+//   });
   
+// // Route: Update an Item
+// app.put('/api/products/update-item', async (req, res) => {
+//   const { id, title, price, rating, image } = req.body;
+
+//   try {
+//     const objectId = mongoose.Types.ObjectId(id);
+
+//     // Update food items collection
+//     const updatedItem = await Fooditems.findOneAndUpdate(
+//       { _id: objectId },
+//       { title, price, rating, image },
+//       { new: true }
+//     );
+
+//     if (updatedItem) {
+//       res.status(200).json({ message: "Item updated successfully.", updatedItem });
+//     } else {
+//       res.status(404).json({ message: "Item not found." });
+//     }
+//   } catch (error) {
+//     console.error("Error updating item:", error);
+//     res.status(500).json({ message: "Server error.", error });
+//   }
+// });
+
 // Start Server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
