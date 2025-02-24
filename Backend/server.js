@@ -35,7 +35,7 @@ const PORT = process.env.PORT || 5000;
 // MongoDB Connection URI
 const MONGODB_URI = 'mongodb+srv://ansarifurqan:WnuOCOLphYHrOFP0@cluster0.9j2gt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 // const allowedOrigin = ['http://localhost:5173','http://localhost:5174']
-const allowedOrigin = ['https://chipper-llama-e67cf9.netlify.app/']
+const allowedOrigin = ['https://chipper-llama-e67cf9.netlify.app']
 // Middleware
 app.use(cors({origin: allowedOrigin, credentials:true}));
 app.use(bodyParser.json());
